@@ -1,0 +1,3 @@
+// Exercice 1
+1) 17 et 17
+2) La variable globale global_sum qui fait office d'accumulateur n'est plus initialisé

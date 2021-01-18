@@ -1,0 +1,39 @@
+// Exercice 1
+1) L'avantage d'un programme compilé est qu'il est éxécuté plus rapidement qu'un programme interprété,
+en revanche il est moins "portable" car il faudra recompilé le code sur chaque machine ou est éxécuté le code.
+
+2) Une erreur de compilation empêche la génération du code exécutable à partir du code source. 
+Il peut s’agir d’une erreur de syntaxe ou de l’utilisation d’une librairie qui n’est pas accessible au 
+compilateur.
+
+Une erreur d’exécution se produit, comme son nom l’indique, au moment de l’exécution du programme. 
+Cette erreur peut être liée à une erreur de programmation, comme un défaut de vérification des arguments
+d’une fonction, ou faire partie du fonctionnement normal du programme (erreur affichée à l’utilisateur 
+en cas de saisie erronée par exemple).
+
+3) En pratique cela signifie qu'on ne peut pas prédire le comportement du programme a l'avance.
+Au moment de son éxécution on peut retrouver le programme dans un état incohérent.
+
+//Exercice 2
+1)  bool  b3{i1};   //Conversion d'un int en bool
+    char c8{"a"};   //invalid conversion from 'const char*' to 'char' 
+    double  d10{i1};    //narrowing conversion of 'i1' from 'int' to 'double'
+    double* d11{d10};   //cannot convert 'double' to 'double*' in initialization
+    double& d12;    //'d12' declared as reference but not initialized
+    int* i16 = &b2; //cannot convert 'bool*' to 'int*' in initialization
+    int& i18{i14};  //binding reference of type 'int&' to 'const int' discards qualifiers
+    const bool b20; //uninitialized 'const b20'
+
+2)  s0 -> valeur indéfinie
+    *i15 -> 2
+    u17 -> 8
+
+//Exercice 3
+2)  1. si le parametre est leger (types basiques genre int, float etc) et il n'est pas à modifier par la fonction --> passage par copie: void f(int x)
+    2. si le parametre est lourde (classes, containers, etc) et il n'est pas à modifier par la fonction --> passage par const ref: void f(const vector<int>& x)
+    3. si le parametre est à modifier par la fonction --> passage par non-const ref: void f(int& x)
+
+3)  int         count_a_occurences(const std::string s);
+    void        update_loop(const float& dt, std::string* errors_out);
+    bool        are_all_positives(const std::vector<int>& values, std::vector<int>& negative_indices_out);
+    std::string concatenate(char* str1, char* str2);
